@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>PhoneGap</title>
+	  <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	  <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="main.js"></script>  
+
+  </head>
+  <body onload="init();" id="stage" class="theme">
+    <h1>脱宅</h1>
+	<h2>这是程序的演示</h2>
+    <div id="landing">
+    <div id="info">
+        <h3>您所在的地点 <span id="location">卡卡圈坊</span>有优惠券噢！！！</h3>
+        <h4><span id="shake">晃一晃</span>就可以得到</h4>
+        <h4>或者按下面获取优惠券按钮</h4>
+     </div>
+    <a href="#" class="btn large" onclick="show_coupon();">获取优惠券</a>
+	<a href="#" class="btn large">更多</a>
+	</div>
+	<div id="coupon" style="display:none;"><img src="img/kakalogo.png" width="100%"/>
+		<div class="info">
+			<h2>原价<span class="price">16</span>元</h2>
+			<h2>现价<span class="cost">6</span>元</h2>
+		</div>
+		<a href="###" class="btn large">购买</a>
+	</div>
+	<!--<dl id="accel-data">
+      <dt>X:</dt><dd id="x">&nbsp;</dd>
+      <dt>Y:</dt><dd id="y">&nbsp;</dd>
+      <dt>Z:</dt><dd id="z">&nbsp;</dd>
+    </dl>
+    
+	<a href="#" class="btn large" onclick="toggleAccel();">Toggle Accelerometer</a>
+    <a href="#" class="btn large" onclick="getLocation();">Get Location</a>
+	
+    <a href="#" class="btn large" onclick="beep();">Beep</a>
+    <a href="#" class="btn large" onclick="vibrate();">Vibrate</a>
+    <a href="#" class="btn large" onclick="show_pic();">Get a Picture</a>
+    <a href="#" class="btn large" onclick="get_contacts();">Get phone's contacts</a>
+    <div id="viewport" class="viewport" style="display: none;">       
+      <img style="width:60px;height:60px" id="test_img" src="" />
+    </div>-->
+  </body>
+</html>
