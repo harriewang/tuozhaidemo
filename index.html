@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=320; user-scalable=no" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>PhoneGap</title>
+    <title>脱宅</title>
 	<!-- iPad/iPhone specific css below, add after your main css >
 	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
 	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
@@ -13,6 +13,8 @@
 	  <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
 	  <script type="text/javascript" charset="utf-8" src="main.js"></script>
       <script type="text/javascript">
+          var watchID = null;
+          
           function onLoad() {
               document.addEventListener("deviceready", onDeviceReady, false);
           }
@@ -20,8 +22,43 @@
           // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
           //
           function onDeviceReady() {
-              // do something here!
+              startWatch();
           }      
+          //start watching 
+          //
+          function startWatch() {
+              //update every half second  1 second = 1000
+              var options = { frequency: 500 };
+              
+              watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+          }
+          //we can stop watching too!
+          //
+          function stopWatch() {
+              if (watchID) {
+                  navigator.accelerometer.clearWatch(watchID);
+                  watchID = null;
+              }
+          }
+          //we can record the accel data now
+          //
+          function onSuccess(acceleration) {
+              /*var element = document.getElementById('accelerometer');
+              element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+              'Acceleration Y: ' + acceleration.y + '<br />' +
+              'Acceleration Z: ' + acceleration.z + '<br />' + 
+              'Timestamp: '      + acceleration.timestamp + '<br />';*/
+              if (acceleration.x > 0.3 && acceleration.y >0.3){
+                  // pop up that coupon
+                  //
+              }
+          }
+          
+          // got problem loading! 
+          //
+          function onError() {
+              alert('onError!');
+          }
           </script>
           
 
@@ -38,7 +75,7 @@
     <a href="#" class="btn large" onclick="show_coupon();">获取优惠券</a>
 	<a href="#" class="btn large">更多</a>
 	</div>
-	<div id="coupon" style="display:none;"><img src="img/KKcoupon.JPG" width="100%"/>
+	<div id="coupon" style="display:none;" onload = "stopWatch();"><img src="img/KKcoupon.JPG" width="100%"/>
 		<!--<div class="info">
 			<h2>原价<span class="price">16</span>元</h2>
 			<h2>现价<span class="cost">6</span>元</h2>
