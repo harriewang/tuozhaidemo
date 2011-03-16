@@ -11,10 +11,22 @@
 	<!-- If you application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
 	  <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	  <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
-	  <script type="text/javascript" charset="utf-8" src="main.js"></script>  
+	  <script type="text/javascript" charset="utf-8" src="main.js"></script>
+      <script type="text/javascript">
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+          
+          // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+          //
+          function onDeviceReady() {
+              // do something here!
+          }      
+          </script>
+          
 
   </head>
-  <body onload="init();" id="stage" class="theme">
+  <body onload="onLoad();" id="stage" class="theme">
     <h1>脱宅</h1>
 	<h2>这是程序的演示</h2>
     <div id="landing">
@@ -26,12 +38,12 @@
     <a href="#" class="btn large" onclick="show_coupon();">获取优惠券</a>
 	<a href="#" class="btn large">更多</a>
 	</div>
-	<div id="coupon" style="display:none;"><img src="img/kakalogo.png" width="100%"/>
-		<div class="info">
+	<div id="coupon" style="display:none;"><img src="img/KKcoupon.JPG" width="100%"/>
+		<!--<div class="info">
 			<h2>原价<span class="price">16</span>元</h2>
 			<h2>现价<span class="cost">6</span>元</h2>
 		</div>
-		<a href="###" class="btn large">购买</a>
+		<a href="###" class="btn large">购买</a>-->
 	</div>
 	<!--<dl id="accel-data">
       <dt>X:</dt><dd id="x">&nbsp;</dd>
