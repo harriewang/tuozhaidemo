@@ -6,6 +6,7 @@
       document.getElementById("width").innerHTML = screen.width;
       document.getElementById("height").innerHTML = screen.height;
       document.getElementById("colorDepth").innerHTML = screen.colorDepth;*/
+    	toggleAccel();
     };
     
     var getLocation = function() {
@@ -139,3 +140,4 @@
 		document.getElementById("coupon").style.display="none";
 		document.getElementById("backbtn").style.display="none";
 	}
+	
