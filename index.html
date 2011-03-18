@@ -1,102 +1,33 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
+	 <head>
     <meta name="viewport" content="width=320; user-scalable=no" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>脱宅</title>
-	<!-- iPad/iPhone specific css below, add after your main css >
-	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
-	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
-	-->
-	<!-- If you application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+    <title>PhoneGap</title>
 	  <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	  <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
-	  <script type="text/javascript" charset="utf-8" src="main.js"></script>
-      <script type="text/javascript">
-          var watchID = null;
-          
-          function onLoad() {
-              document.addEventListener("deviceready", onDeviceReady, false);
-          }
-          
-          // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-          //
-          function onDeviceReady() {
-              startWatch();
-          }      
-          //start watching 
-          //
-          function startWatch() {
-              //update every half second  1 second = 1000
-              var options = { frequency: 500 };
-              
-              watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-          }
-          //we can stop watching too!
-          //
-          function stopWatch() {
-              if (watchID) {
-                  navigator.accelerometer.clearWatch(watchID);
-                  watchID = null;
-              }
-          }
-          //we can record the accel data now
-          //
-          function onSuccess(acceleration) {
-              /*var element = document.getElementById('accelerometer');
-              element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-              'Acceleration Y: ' + acceleration.y + '<br />' +
-              'Acceleration Z: ' + acceleration.z + '<br />' + 
-              'Timestamp: '      + acceleration.timestamp + '<br />';*/
-              if (acceleration.x > 0.3 && acceleration.y >0.3){
-                  // pop up that coupon
-                  //
-              }
-          }
-          
-          // got problem loading! 
-          //
-          function onError() {
-              alert('onError!');
-          }
-          </script>
-          
+	  <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="main.js"></script>  
 
   </head>
-  <body onload="onLoad();" id="stage" class="theme">
-    <h1>脱宅</h1>
+<body onload="init();" id="stage" class="theme">
+	<h1>脱宅</h1>
 	<h2>这是程序的演示</h2>
-    <div id="landing">
-    <div id="info">
-        <h3>您所在的地点 <span id="location">卡卡圈坊</span>有优惠券噢！！！</h3>
-        <h4><span id="shake">晃一晃</span>就可以得到</h4>
-        <h4>或者按下面获取优惠券按钮</h4>
-     </div>
-    <a href="#" class="btn large" onclick="show_coupon();">获取优惠券</a>
-	<a href="#" class="btn large">更多</a>
+	<a class="btn" id="backbtn" style="float:left;display:none;" onclick="backtomain();">返回</a>
+<div id="landing">
+	<div id="info">
+		<h3>您所在的地点 <span id="location">卡卡圈坊</span>有优惠券噢！！！</h3>
+		<h4><span id="shake">晃一晃</span>就可以得到</h4>
+		<h4>或者按下面获取优惠券按钮</h4>
 	</div>
-	<div id="coupon" style="display:none;" onload = "stopWatch();"><img src="img/KKcoupon.JPG" width="100%"/>
-		<!--<div class="info">
-			<h2>原价<span class="price">16</span>元</h2>
-			<h2>现价<span class="cost">6</span>元</h2>
-		</div>
-		<a href="###" class="btn large">购买</a>-->
-	</div>
-	<!--<dl id="accel-data">
+	<dl id="accel-data">
       <dt>X:</dt><dd id="x">&nbsp;</dd>
       <dt>Y:</dt><dd id="y">&nbsp;</dd>
       <dt>Z:</dt><dd id="z">&nbsp;</dd>
     </dl>
-    
-	<a href="#" class="btn large" onclick="toggleAccel();">Toggle Accelerometer</a>
-    <a href="#" class="btn large" onclick="getLocation();">Get Location</a>
-	
-    <a href="#" class="btn large" onclick="beep();">Beep</a>
-    <a href="#" class="btn large" onclick="vibrate();">Vibrate</a>
-    <a href="#" class="btn large" onclick="show_pic();">Get a Picture</a>
-    <a href="#" class="btn large" onclick="get_contacts();">Get phone's contacts</a>
-    <div id="viewport" class="viewport" style="display: none;">       
-      <img style="width:60px;height:60px" id="test_img" src="" />
-    </div>-->
-  </body>
+    <a href="#" class="btn large" onclick="show_coupon();">获取优惠券</a>
+    <a href="#" class="btn large" onclick="toggleAccel();">Toggle Accelerometer</a>
+	<a href="#" class="btn large">更多</a>
+</div>
+<div id="coupon" style="display:none;"><img src="img/KKcoupon.JPG" width="100%"/>
+</body>
 </html>

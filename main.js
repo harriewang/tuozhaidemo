@@ -1,11 +1,11 @@
     var deviceInfo = function(){      
-      document.getElementById("platform").innerHTML = device.platform;
+      /*document.getElementById("platform").innerHTML = device.platform;
       document.getElementById("version").innerHTML = device.version;
       document.getElementById("uuid").innerHTML = device.uuid;
       document.getElementById("name").innerHTML = device.name;
       document.getElementById("width").innerHTML = screen.width;
       document.getElementById("height").innerHTML = screen.height;
-      document.getElementById("colorDepth").innerHTML = screen.colorDepth;
+      document.getElementById("colorDepth").innerHTML = screen.colorDepth;*/
     };
     
     var getLocation = function() {
@@ -44,7 +44,7 @@
     	} else {
     		accelerationWatch = true;
     		var options = new Object();
-    		options.frequency = 1000;
+    		options.frequency = 500;
     		accelerationWatch = navigator.accelerometer.watchAcceleration(
     				updateAcceleration, function(ex) {
     					navigator.accelerometer.clearWatch(accel_watch_id);
@@ -54,9 +54,13 @@
     };
 
     function updateAcceleration(a) {
+    	var n = 10;
 		document.getElementById('x').innerHTML = roundNumber(a.x);
 		document.getElementById('y').innerHTML = roundNumber(a.y);
 		document.getElementById('z').innerHTML = roundNumber(a.z);
+		if(roundNumber(a.x)>n||roundNumber(a.z)>n){
+    		show_coupon();
+    	}
     }
     
 	var preventBehavior = function(e) { 
@@ -122,10 +126,16 @@
   	
 	function init(){
 		//the next line makes it impossible to see Contacts on the HTC Evo since it doesn't have a scroll button
-//		document.addEventListener("touchmove", preventBehavior, false);  
-		document.addEventListener("deviceready", deviceInfo, true);		
+		//document.addEventListener("touchmove", preventBehavior, false);  
+		document.addEventListener("deviceready", deviceInfo, true);
 	}
-function show_coupon(){
-	document.getElementById("landing").style.display="none";
-	document.getElementById("coupon").style.display="";
-}
+	function show_coupon(){
+		document.getElementById("landing").style.display="none";
+		document.getElementById("coupon").style.display="";
+		document.getElementById("backbtn").style.display="";
+	}
+	function backtomain(){
+		document.getElementById("landing").style.display="";
+		document.getElementById("coupon").style.display="none";
+		document.getElementById("backbtn").style.display="none";
+	}
