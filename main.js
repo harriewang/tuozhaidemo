@@ -65,7 +65,7 @@
     }
     
 	var preventBehavior = function(e) { 
-      e.preventDefault(); 
+      e.preventDefault();
     };
 
     function show_pic()
@@ -131,13 +131,14 @@
 		document.addEventListener("deviceready", deviceInfo, true);
 	}
 	function show_coupon(){
+		//$("#landing").slideToggle();
+		//$("#coupon").slideToggle();
+			
 		document.getElementById("landing").style.display="none";
 		document.getElementById("coupon").style.display="";
-		document.getElementById("backbtn").style.display="";
 	}
 	function backtomain(){
 		document.getElementById("landing").style.display="";
 		document.getElementById("coupon").style.display="none";
-		document.getElementById("backbtn").style.display="none";
 	}
 	

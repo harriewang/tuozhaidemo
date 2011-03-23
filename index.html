@@ -5,6 +5,9 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>PhoneGap</title>
 	  <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	  <!-- link rel="stylesheet"  href="jquery/jquery.mobile-1.0a3.min.css" /> 
+	<script type="text/javascript" src="jquery/jquery-1.5.min.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.mobile-1.0a3.min.js"></script--> 
 	  <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.js"></script>
 	  <script type="text/javascript" charset="utf-8" src="main.js"></script>  
 
@@ -12,14 +15,13 @@
 <body onload="init();" id="stage" class="theme">
 	<h1>脱宅</h1>
 	<h2>这是程序的演示</h2>
-	<a class="btn" id="backbtn" style="float:left;display:none;" onclick="backtomain();">返回</a>
 <div id="landing">
 	<div id="info">
 		<h3>您所在的地点 <span id="location">卡卡圈坊</span>有优惠券噢！！！</h3>
 		<h4><span id="shake">晃一晃</span>就可以得到</h4>
 		<h4>或者按下面获取优惠券按钮</h4>
 	</div>
-	<dl id="accel-data">
+	<dl id="accel-data" style="display:none;">
       <dt>X:</dt><dd id="x">&nbsp;</dd>
       <dt>Y:</dt><dd id="y">&nbsp;</dd>
       <dt>Z:</dt><dd id="z">&nbsp;</dd>
@@ -28,5 +30,6 @@
 	<a href="#" class="btn large">更多</a>
 </div>
 <div id="coupon" style="display:none;"><img src="img/KKcoupon.JPG" width="100%"/>
+<a href="#" class="btn large" onclick="backtomain();">返回</a>
 </body>
 </html>
