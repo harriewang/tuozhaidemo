@@ -1,116 +1,86 @@
-  body {
-    background:#222 none repeat scroll 0 0;
-    color:#666;
-    font-family:Helvetica;
-    font-size:72%;
-    line-height:1.5em;
-    margin:0;
-    border-top:1px solid #393939;
-  }
-
-  #info{
-    background:#ffa;
-    border: 1px solid #ffd324;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    clear:both;
-    margin:15px 6px 0;
-    width:295px;
-    padding:4px 0px 2px 10px;
-  }
-  
-  #info > h4{
-    font-size:.95em;
-    margin:5px 0;
-  }
-  .info{
-    background:#ffa;
-    border: 1px solid #ffd324;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    clear:both;
-    margin:15px 6px 0;
-    width:295px;
-    padding:4px 0px 2px 10px;
-  }
-  
-  .info > h4{
-    font-size:.95em;
-    margin:5px 0;
-  }
+body {
+	background:#222 none repeat scroll 0 0;
+	color:#666;
+	padding:0;
+	margin:0;
+}
+div{
+	padding:0;
+	margin:0;
+}
  	
-  #stage.theme{
-    padding-top:3px;
-  }
-
-  /* Definition List */
-  #stage.theme > dl{
-  	padding-top:10px;
-  	clear:both;
-  	margin:0;
-  	list-style-type:none;
-  	padding-left:10px;
-  	overflow:auto;
-  }
-
-  #stage.theme > dl > dt{
-  	font-weight:bold;
-  	float:left;
-  	margin-left:5px;
-  }
-
-  #stage.theme > dl > dd{
-  	width:45px;
-  	float:left;
-  	color:#a87;
-  	font-weight:bold;
-  }
-
-  /* Content Styling */
-  #stage.theme > h1, #stage.theme > h2, #stage.theme > p{
-    margin:1em 0 .5em 13px;
-  }
-
-  #stage.theme > h1{
-    color:#eee;
-    font-size:1.6em;
-    text-align:center;
-    margin:0;
-    margin-top:15px;
-    padding:0;
-  }
-
-  #stage.theme > h2{
-  	clear:both;
-    margin:0;
-    padding:3px;
-    font-size:1em;
-    text-align:center;
-  }
-
-  /* Stage Buttons */
-  #stage.theme a.btn{
-  	border: 1px solid #555;
-  	-webkit-border-radius: 5px;
-  	border-radius: 5px;
-  	text-align:center;
-  	display:block;
-  	float:left;
-  	background:#444;
-  	width:150px;
-  	color:#9ab;
-  	font-size:1.1em;
-  	text-decoration:none;
-  	padding:1.2em 0;
-  	margin:3px 0px 3px 5px;
-  }
-  #stage.theme a.btn.large{
-  	width:308px;
-  	padding:1.2em 0;
-  }
-  #location{
-  
-  }
-  #shake{
-	
-  }
+#top{
+	clear:both;
+	top: 0px;
+	z-index: 999;
+	left: 0px;
+	width: 100%;
+	position: fixed;
+}
+#top ul{
+	padding:0; margin:0; list-style:none; width:300px; clear:both;
+}
+#top li{
+	padding:0; margin:0; list-style:none; float:left; width:50px; height:50px;
+}
+#main{
+	width: 100%;
+	top: 55px;
+	z-index: 999;
+	left: 0px;
+	position: fixed;
+	clear:both;
+}
+#maincontent{
+	width:94%;
+	margin:0 auto;
+}
+#sendbutton{
+	width:94%;
+	margin:0 auto;
+	text-align:left;
+}
+#sendbuttonright{
+	float:right;
+	color:white;
+	font-size:9px;
+	padding-top:35px;
+}
+#sendtxt{
+	width:94%;
+	margin:0 auto;
+	text-align:center;
+}
+#sendtxt textarea{
+	width:100%;
+	height:100px;
+}
+#sendoptionsbutton{
+	width:94%;
+	margin:0 auto;
+	text-align:right;
+}
+#sendoptions{
+	width:94%;
+	margin:0 auto;
+	text-align:center;
+}
+#bottom{
+	background-color:#FFFFFF;
+	clear:both;
+	/*float at bottom*/
+	z-index: 999;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	_position: absolute; /* for IE6 */
+	_top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); /* for IE6 */
+	overflow: visible;
+}
+#bottom ul{
+	padding:0; margin:0; list-style:none; width:100%; clear:both;
+}
+#bottom li{
+	padding:0; margin:0; list-style:none; float:left; width:33%;display: table-cell; height:40px;line-height:40px;text-align:center;overflow: hidden;vertical-align: middle;
+}
